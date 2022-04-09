@@ -1,0 +1,15 @@
+编译Linux 0.11源码并使用qemu启动
+利用shell命令实现以下操作：（也可以在Ubuntu主机的shell环境中操作） 
+
+创建文件夹dir1，并在里面创建文件os.txt 
+往文件写入内容"OS exp 1" 
+将该文件重命名为os_lab1.txt 
+最后在终端中输出文件内容 
+
+用gdb连接到qemu的Linux 0.11 
+使用gdb的常用命令进行调试： 
+自行根据Linux源码选择一个位置，设置断点 
+尝试使用n、s、l、p等命令 
+
+从Ubuntu复制一个文本文件到Linux 0.11的硬盘镜像中 
+qemu启动Linux 0.11，查看复制的文件内容

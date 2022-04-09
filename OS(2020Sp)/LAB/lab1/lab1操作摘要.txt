@@ -1,0 +1,27 @@
+第二节
+$ cd ~/oslab/Linux-0.11   # 进入源代码文件夹 
+$ qemu-system-i386 -m 16 -boot a -fda Image -hda hdc-0.11.img -s -S 
+
+$ gdb                #这里一定是在另外一个终端运行，不能在qemu的窗口上输入 
+$ file ~/oslab/Linux-0.11/tools/system     #加载符号表 
+$ target remote localhost:1234                #建立gdb和gdbserver之间的连接
+$ b main 
+$ c
+
+第三节
+$ cd ~/os_lab/Linux-0.11    
+$ mkdir hdc
+$ sudo mount -t minix -o loop,offset=512 ~/os_lab/Linux-0.11/hdc-0.11.img ~/os_lab/Linux-0.11/hdc
+$ cd ~/dir1
+$ mv os_lab1.txt ~/os_lab/Linux-0.11/hdc/usr/root
+
+$ cd  ~/os_lab/Linux-0.11/hdc/usr/root
+                 $ sudo touch hello.txt   # 创建文件 
+                 $ sudo vim hello.txt   # 向文件写入hello world!
+   cd ..
+$ sudo umount /dev/loop15 
+$ df -h
+
+$ cd ~/oslab/Linux-0.11 
+$ make start
+
